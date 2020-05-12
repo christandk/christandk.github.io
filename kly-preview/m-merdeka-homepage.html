@@ -3149,7 +3149,7 @@ window.GAMLibrary = {};
                                                         if (scrollTop >= "200") {
                                                             console.log('testing scroll',scrollTop,this.timedBottomFrm);
                                                             window.removeEventListener("scroll", this.scrollHandler);
-                                                            
+                                                            timedBottomFrm = googletag.defineSlot(oop_dfpBottomframe, [[320, 50],[320, 100]], 'div-gpt-ad-merdeka-bottomfrm').addService(googletag.pubads());
                                                             googletag.display('div-gpt-ad-merdeka-bottomfrm');
                                                             googletag.pubads().refresh([this.timedBottomFrm]);
 
