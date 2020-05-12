@@ -3018,7 +3018,7 @@ x:-o-prefocus, .slider-panorama .slick-prev.slick-disabled{
 <div id='div-gpt-ad-dfp-overlay-oop'></div>
 <!--END DFP OVERLAY ADS-->
 	<script>
-     var gpt_gam_ver = 'v04.4-CDK';
+     var gpt_gam_ver = 'v04a-CDK';
 gpt_gam_site = window.location.hostname.toUpperCase();
 gpt_gam_ver = (typeof gpt_gam_site !== 'undefined') ? gpt_gam_ver.toUpperCase() : 'V.0.1';
 console.log('%c GPT '+gpt_gam_site+' '+gpt_gam_ver ,'color:#d3d3d3; font-size:25px; font-weight: bold; -webkit-text-stroke: 1px black;');
@@ -3147,7 +3147,6 @@ window.GAMLibrary = {};
                                                 var scrollNode = document.scrollingElement || document.documentElement;
                                                 var scrollTop = scrollNode.scrollTop;
                                                 if (scrollTop >= "200") {
-						    document.getElementById("dfp-bframe-cont-transparent") && document.getElementById("dfp-bframe-cont-transparent").setAttribute("style", "position: fixed; bottom: 0; min-height: 50px; background-color: #ECECEC70; width: 100%; text-align: center;display:block; z-index: 999999");
                                                     window.removeEventListener("scroll", this.scrollHandler);
                                                     googletag.display('div-gpt-ad-merdeka-bottomfrm');
                                                     googletag.pubads().refresh([this.timedBottomFrm]);
@@ -3328,6 +3327,7 @@ window.GAMLibrary = {};
         /*Bottom Frame Scrolling*/
         GAMLibrary.timedBottomFrm = googletag.defineSlot(GAMLibrary.dfpBottomFrame, [[320, 50],[320, 100]], 'div-gpt-ad-merdeka-bottomfrm').addService(googletag.pubads());
         GAMLibrary.scrollBottomFrame();
+        document.getElementById("dfp-bframe-cont-transparent") && document.getElementById("dfp-bframe-cont-transparent").setAttribute("style", "position: fixed; bottom: 0; min-height: 50px; background-color: #ECECEC70; width: 100%; text-align: center;display:block; z-index: 999999");
         /*Bottom Frame Scrolling*/
 
         googletag.pubads().addEventListener('slotResponseReceived', function(event) {
@@ -3341,11 +3341,6 @@ window.GAMLibrary = {};
                     var myParam = JSON.parse(urlParams.get('interval'));
                     headlineSticky(myParam);
                 }
-
-                if (dfp_slotAdUnitPath == GAMLibrary.dfpBottomFrame) {
-                    document.getElementById("dfp-bframe-cont-transparent") && document.getElementById("dfp-bframe-cont-transparent").setAttribute("style", "position: fixed; bottom: 0; min-height: 50px; background-color: #ECECEC70; width: 100%; text-align: center;display:block; z-index: 999999");
-                }
-                
                 /*check for topframe rendering process */
                 if (dfp_slotAdUnitPath == GAMLibrary.dfpTopframe) {
                     let deviceOrientation = (window.innerHeight < window.innerWidth ? 1 : 0);
@@ -3492,6 +3487,7 @@ window.GAMLibrary = {};
 		}
 		`,document.head.appendChild(a)}    
 	/* ===== HEADLINESTICKY METHOD ===== */
+       
     </script>
 	<!--LOTAME PIXEL TAG-->
   <!--<script src="https://tags.crwdcntrl.net/c/7159/cc_af.js" async defer></script>-->
