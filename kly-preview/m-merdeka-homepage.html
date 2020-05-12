@@ -3017,7 +3017,7 @@ x:-o-prefocus, .slider-panorama .slick-prev.slick-disabled{
 <div id='div-gpt-ad-dfp-overlay-oop'></div>
 <!--END DFP OVERLAY ADS-->
 	<script>
-     var gpt_gam_ver = 'v04e-CDK';
+     var gpt_gam_ver = 'v04g-CDK';
 gpt_gam_site = window.location.hostname.toUpperCase();
 gpt_gam_ver = (typeof gpt_gam_site !== 'undefined') ? gpt_gam_ver.toUpperCase() : 'V.0.1';
 console.log('%c GPT '+gpt_gam_site+' '+gpt_gam_ver ,'color:#d3d3d3; font-size:25px; font-weight: bold; -webkit-text-stroke: 1px black;');
@@ -3153,11 +3153,11 @@ window.GAMLibrary = {};
 
                                                     this.refreshSlot = this.timedBottomFrm;
                                                     this.setGamBFInterval();
+						    document.getElementById("dfp-bframe-cont-transparent") && document.getElementById("dfp-bframe-cont-transparent").setAttribute("style", "position: fixed; bottom: 0; min-height: 50px; background-color: #ECECEC70; width: 100%; text-align: center;display:block; z-index: 999999");
                                                 }
                                         };
                                     this.scrollHandler = this.scroll.bind(this);
                                     window.addEventListener("scroll", this.scrollHandler);
-				    document.getElementById("dfp-bframe-cont-transparent") && document.getElementById("dfp-bframe-cont-transparent").setAttribute("style", "position: fixed; bottom: 0; min-height: 50px; background-color: #ECECEC70; width: 100%; text-align: center;display:block; z-index: 999999");
                                 },
         initiateSCReadPage	:  function () {
                                     var scContainer = document.querySelectorAll('#div-gpt-ad-merdeka-sc'),
