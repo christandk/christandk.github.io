@@ -3018,7 +3018,7 @@ x:-o-prefocus, .slider-panorama .slick-prev.slick-disabled{
 <div id='div-gpt-ad-dfp-overlay-oop'></div>
 <!--END DFP OVERLAY ADS-->
 	<script>
-     var gpt_gam_ver = 'v04.3-CDK';
+     var gpt_gam_ver = 'v04.4-CDK';
 gpt_gam_site = window.location.hostname.toUpperCase();
 gpt_gam_ver = (typeof gpt_gam_site !== 'undefined') ? gpt_gam_ver.toUpperCase() : 'V.0.1';
 console.log('%c GPT '+gpt_gam_site+' '+gpt_gam_ver ,'color:#d3d3d3; font-size:25px; font-weight: bold; -webkit-text-stroke: 1px black;');
@@ -3084,15 +3084,15 @@ console.log('%c GPT '+gpt_gam_site+' '+gpt_gam_ver ,'color:#d3d3d3; font-size:25
 
 window.GAMLibrary = {};
     window.GAMLibrary = {
-        dfpSlideup          :   '/36504930/m.merdeka.com/dfp-slideup',
-        dfpExposer1         :   '/36504930/m.merdeka.com/dfp-exposer-slot1',
-        dfpExposer2         :   '/36504930/m.merdeka.com/dfp-exposer-slot2',
-        dfpBottomFrame      :   '/36504930/m.merdeka.com/dfp-bottomfrm',
-        dfpTopframe         :   '/36504930/m.merdeka.com/dfp-topfrm',
-        dfpHeadline         :   '/36504930/m.merdeka.com/dfp-headline',
-        scSlot              :   '/36504930/m.merdeka.com/dfp-sc',
-        timedBottomFrm      :   null,
-        setGamBFInterval    :   function (active = true) {
+        dfpSlideup 			: 	'/36504930/m.merdeka.com/dfp-slideup',
+        dfpExposer1 		: 	'/36504930/m.merdeka.com/dfp-exposer-slot1',
+        dfpExposer2 		: 	'/36504930/m.merdeka.com/dfp-exposer-slot2',
+        dfpBottomFrame		: 	'/36504930/m.merdeka.com/dfp-bottomfrm',
+        dfpTopframe 		: 	'/36504930/m.merdeka.com/dfp-topfrm',
+        dfpHeadline 		: 	'/36504930/m.merdeka.com/dfp-headline',
+        scSlot 				: 	'/36504930/m.merdeka.com/dfp-sc',
+        timedBottomFrm      :  	null,
+        setGamBFInterval    :  	function (active = true) {
                                     if (!active) {
                                         clearInterval(window.GAMLibrary.gamBFInterval);
                                         return;
@@ -3102,7 +3102,7 @@ window.GAMLibrary = {};
                                         googletag.pubads().refresh([window.GAMLibrary.refreshSlot]);
                                     }, 60000);
                                 },
-        documentMeta       :    function (metaName) {
+        documentMeta       :   	function (metaName) {
                                     var metaResult = '';
                                     var metas = document.getElementsByTagName('meta');
                                     if (metas) {
@@ -3142,25 +3142,23 @@ window.GAMLibrary = {};
                                         this.status = true;
                                     }
                                 },
-        scrollBottomFrame   :   function() {
-                                    this.scroll = function(){
-                                                        var scrollNode = document.scrollingElement || document.documentElement;
-                                                        var scrollTop = scrollNode.scrollTop;
-                                                        if (scrollTop >= "200") {
-                                                            console.log('testing scroll',scrollTop,this.timedBottomFrm);
-                                                            window.removeEventListener("scroll", this.scrollHandler);
-                                                            timedBottomFrm = googletag.defineSlot(oop_dfpBottomframe, [[320, 50],[320, 100]], 'div-gpt-ad-merdeka-bottomfrm').addService(googletag.pubads());
-                                                            googletag.display('div-gpt-ad-merdeka-bottomfrm');
-                                                            googletag.pubads().refresh([this.timedBottomFrm]);
+        scrollBottomFrame   : 	function() {
+                                this.scroll = function(){
+                                                var scrollNode = document.scrollingElement || document.documentElement;
+                                                var scrollTop = scrollNode.scrollTop;
+                                                if (scrollTop >= "200") {
+                                                    window.removeEventListener("scroll", this.scrollHandler);
+                                                    googletag.display('div-gpt-ad-merdeka-bottomfrm');
+                                                    googletag.pubads().refresh([this.timedBottomFrm]);
 
-                                                            this.refreshSlot = this.timedBottomFrm;
-                                                            this.setGamBFInterval();
-                                                        }
-                                                    };
+                                                    this.refreshSlot = this.timedBottomFrm;
+                                                    this.setGamBFInterval();
+                                                }
+                                        };
                                     this.scrollHandler = this.scroll.bind(this);
                                     window.addEventListener("scroll", this.scrollHandler);
                                 },
-        initiateSCReadPage  :  function () {
+        initiateSCReadPage	:  function () {
                                     var scContainer = document.querySelectorAll('#div-gpt-ad-merdeka-sc'),
                                     idx_scMulti = 1;
                                     scContainer.forEach(function(v,i){
@@ -3208,7 +3206,7 @@ window.GAMLibrary = {};
 
               /* Criteo Section BEGIN */
             var criteoLoader = document.createElement('script'),
-                initCriteo = document.createElement('script');
+            initCriteo = document.createElement('script');
             initCriteo.innerText = 'window.Criteo=window.Criteo||{},window.Criteo.events=window.Criteo.events||[];';
             criteoLoader.setAttribute('async', 'async');
             criteoLoader.setAttribute('type', 'text/javascript');
@@ -3276,8 +3274,8 @@ window.GAMLibrary = {};
         var urlPath = document.URL;
         var isMatcont = false;
         /*NO-ADS WORD LIST*/
-        var blackListWords = new Array('matcont', 'aduhai', 'kelamin', 'vital', 'anal', 'belahan', 'bercinta', 'bergairah', 'gairah', 'intim', 'bikini', 'bokong', 'boob', 'bra', 'bugil', 'celana', 'ciuman', 'cleavage', 'dada', 'dewasa', 'diremas', 'doggie', 'ejakulasi', 'ereksi', 'erotis', 'foreplay', 'kiss', 'seks', 'gangbang', 'horny', 'hot', 'kamasutra', 'keperawanan', 'perawan', 'kondom', 'kontrasepsi', 'libido', 'lingerie', 'masturbasi', 'mature', 'menggairahkan', 'menggoda', 'mesra', 'miss-v', 'mr-p', 'nakal', 'naughty', 'nipple', 'nipples', 'onani', 'oral', 'oral seks', 'organ', 'orgasme', 'paha', 'pantat', 'panties', 'payudara', 'pelecehan', 'telanjang', 'penetrasi', 'penis', 'perkosa', 'perkosaan', 'pole', 'porno', 'pornoaksi', 'pornografi', 'telentang', 'provokatif', 'putting', 'ranjang', 'sex', 'penetratif', 'seksi', 'seksual', 'sensual', 'seronok', 'doll', 'toys', 'skandal', 'sperma', 'striptease', 'striptis', 'syur', 'terangsang', 'tiduri', 'topless', 'vagina', 'vibrator', 'lendir', 'prostitusi', 'homoseks', 'meraba-raba', 'mesum', 'memerkosa', 'rudapaksa', 'kemaluan', 'kasus asusila', 'pemerkosaan', 'hubungan seksual', 'hubungan intim', 'video porno', 'berita hoax', 'ternyata hoax', 'ahed tamimi', 'konflik palestina israel', 'konflik suriah', 'ujaran kebencian', 'g30s', 'kediktatoran arab saudi', 'konflik palestina-israel', 'fpi', 'penembakan', 'pelecehan seksual', 'tips seks', 'komunitas swinger', 'fenomena kelainan seksual', 'penyimpangan seks', 'posisi seks', 'obat kuat', 'bentuk payudara', 'implan payudara', 'chat firza-rizieq', 'anarkisme suporter sepakbola', 'bentrok suporter', 'pengeroyokan', 'penganiayaan', 'begal motor', 'kekerasan pada wartawan', 'pemerkosaan anak', 'pencabulan', 'bentrokan warga', 'bentrokan', 'kasus narkoba', 'akibat merokok', 'bahaya merokok', 'berhenti merokok', 'cara berhenti merokok', 'efek berhenti merokok', 'larangan merokok', 'tips berhenti merokok', 'rokok elektrik', 'pilpres 2019', 'koalisi pilpres 2019', 'koalisi prabowo', 'koalisi jokowi', 'prabowo-sandiaga', 'ratna sarumpaet', 'capres jokowi', 'capres prabowo', 'kebohongan ratna sarumpaet', 'prabowo subianto', 'jemaah ansharut daulah', 'aliran sesat', 'lia eden', 'kisah mualaf', 'penistaan agama', 'suporter tewas', 'gempa palu', 'gempa donggala', 'gempa sulawesi tengah', 'pembunuhan', 'tsunami palu', 'penemuan mayat', 'lion air jatuh di karawang', 'lion air jatuh', 'pembunuhan sadis', 'lion air hilang kontak', 'pesawat jatuh', 'pesawat hilang kontak', 'kecelakaan', 'kapal tenggelam di danau toba', 'kecelakaan bus', 'kapal tenggelam', 'kasus tabrak lari', 'bunuh diri', 'perselingkuhan', 'kisah perselingkuhan', 'razia pasangan mesum', 'seks bebas', 'gangguan jiwa', 'tes keperawanan', 'kontroversi hukuman mati', 'stres dan depresi', 'ahok gugat cerai veronica tan', 'Kanker', 'Impotensi', 'merokok', 'Perokok', 'Rokok', 'tembakau', 'Pelanggaran', 'Tablet', 'Overdosis', 'Jantung', 'Stroke', 'Cancer', 'Narkoba', 'Djarum', 'Ganja', 'BNN', 'Obesitas', 'Osteoporosis', 'Corona', 'Corona di indonesia', 'virus corona', 'virus-corona', 'covid-19', 'wabah corona', 'menewaskan', 'menewaskan orang', 'mengancam nyawa', 'meninggal', 'meninggal dunia', 'orang mati', 'orang tewas', 'pemakaman', 'petugas penyelamat', 'telah meninggal', 'terbunuh', 'tewas', 'tewaskan', 'tim penyelamat', 'wanita meninggal', 'autopsi', 'belasungkawa', 'bencana', 'bencana besar', 'bunuh orang', 'darurat bencana', 'dilaporkan tewas', 'dimakamkan', 'dipastikan tewas', 'ditemukan mati', 'ditemukan tewas', 'hilangnya nyawa', 'identitas korban', 'inalillahi', 'jasad korban', 'jasadnya', 'jenasah wanita', 'jenazah', 'jenazah pria', 'jenazah teridentifikasi', 'jasad', 'kehilangan hidupnya', 'kehilangan nyawa', 'kehilangan nyawanya', 'kematian', 'korban', 'korban jiwa', 'korban meninggal', 'korban tewas', 'mati', 'mayat', 'mayat korban', 'membunuh', 'membunuh istrinya', 'membunuh mereka', 'membunuh suaminya', 'menemui ajal', 'mengalami koma', 'menghembuskan nafas terakhir', 'menimbulkan korban', 'meninggal akibat sakit', 'menyebabkan kematian', 'meregang nyawa', 'meregggut nyawa', 'modar', 'nyawa hilang', 'nyawa melayang', 'penyebab kematian', 'tak bernyawa', 'tak sadarkan diri', 'terkapar', 'tidak bernyawa', 'tutup usia', 'wafat', 'kematian virus', 'kematian wabah', 'korban terinfeksi', 'virus menyerang', 'merenggut nyawa', 'pelayat', 'hilangkan nyawa', 'renggut nyawa', 'wabah', 'keadaan kritis', 'kehilangan darah', 'merenggut jiwa', 'telan nyawa', 'menelan nyawa', 'memakan nyawa', 'dinyatakan meninggal', 'nyawa tak tertolong', 'penyakit', 'sakit pernapasan', 'sesak', 'korona', 'corona', 'odp', 'pdp', 'virus', 'rumah sakit', 'Covid-19', 'virus korona', 'positif korona', 'COVID-19', 'terjangkit COVID-19', 'terinfeksi virus corona');
-        /*END NO-ADS WORD LIST*/
+	    var blackListWords = new Array('matcont', 'aduhai', 'kelamin', 'vital', 'anal', 'belahan', 'bercinta', 'bergairah', 'gairah', 'intim', 'bikini', 'bokong', 'boob', 'bra', 'bugil', 'celana', 'ciuman', 'cleavage', 'dada', 'dewasa', 'diremas', 'doggie', 'ejakulasi', 'ereksi', 'erotis', 'foreplay', 'kiss', 'seks', 'gangbang', 'horny', 'hot', 'kamasutra', 'keperawanan', 'perawan', 'kondom', 'kontrasepsi', 'libido', 'lingerie', 'masturbasi', 'mature', 'menggairahkan', 'menggoda', 'mesra', 'miss-v', 'mr-p', 'nakal', 'naughty', 'nipple', 'nipples', 'onani', 'oral', 'oral seks', 'organ', 'orgasme', 'paha', 'pantat', 'panties', 'payudara', 'pelecehan', 'telanjang', 'penetrasi', 'penis', 'perkosa', 'perkosaan', 'pole', 'porno', 'pornoaksi', 'pornografi', 'telentang', 'provokatif', 'putting', 'ranjang', 'sex', 'penetratif', 'seksi', 'seksual', 'sensual', 'seronok', 'doll', 'toys', 'skandal', 'sperma', 'striptease', 'striptis', 'syur', 'terangsang', 'tiduri', 'topless', 'vagina', 'vibrator', 'lendir', 'prostitusi', 'homoseks', 'meraba-raba', 'mesum', 'memerkosa', 'rudapaksa', 'kemaluan', 'kasus asusila', 'pemerkosaan', 'hubungan seksual', 'hubungan intim', 'video porno', 'berita hoax', 'ternyata hoax', 'ahed tamimi', 'konflik palestina israel', 'konflik suriah', 'ujaran kebencian', 'g30s', 'kediktatoran arab saudi', 'konflik palestina-israel', 'fpi', 'penembakan', 'pelecehan seksual', 'tips seks', 'komunitas swinger', 'fenomena kelainan seksual', 'penyimpangan seks', 'posisi seks', 'obat kuat', 'bentuk payudara', 'implan payudara', 'chat firza-rizieq', 'anarkisme suporter sepakbola', 'bentrok suporter', 'pengeroyokan', 'penganiayaan', 'begal motor', 'kekerasan pada wartawan', 'pemerkosaan anak', 'pencabulan', 'bentrokan warga', 'bentrokan', 'kasus narkoba', 'akibat merokok', 'bahaya merokok', 'berhenti merokok', 'cara berhenti merokok', 'efek berhenti merokok', 'larangan merokok', 'tips berhenti merokok', 'rokok elektrik', 'pilpres 2019', 'koalisi pilpres 2019', 'koalisi prabowo', 'koalisi jokowi', 'prabowo-sandiaga', 'ratna sarumpaet', 'capres jokowi', 'capres prabowo', 'kebohongan ratna sarumpaet', 'prabowo subianto', 'jemaah ansharut daulah', 'aliran sesat', 'lia eden', 'kisah mualaf', 'penistaan agama', 'suporter tewas', 'gempa palu', 'gempa donggala', 'gempa sulawesi tengah', 'pembunuhan', 'tsunami palu', 'penemuan mayat', 'lion air jatuh di karawang', 'lion air jatuh', 'pembunuhan sadis', 'lion air hilang kontak', 'pesawat jatuh', 'pesawat hilang kontak', 'kecelakaan', 'kapal tenggelam di danau toba', 'kecelakaan bus', 'kapal tenggelam', 'kasus tabrak lari', 'bunuh diri', 'perselingkuhan', 'kisah perselingkuhan', 'razia pasangan mesum', 'seks bebas', 'gangguan jiwa', 'tes keperawanan', 'kontroversi hukuman mati', 'stres dan depresi', 'ahok gugat cerai veronica tan', 'Kanker', 'Impotensi', 'merokok', 'Perokok', 'Rokok', 'tembakau', 'Pelanggaran', 'Tablet', 'Overdosis', 'Jantung', 'Stroke', 'Cancer', 'Narkoba', 'Djarum', 'Ganja', 'BNN', 'Obesitas', 'Osteoporosis', 'Corona', 'Corona di indonesia', 'virus corona', 'virus-corona', 'covid-19', 'wabah corona', 'menewaskan', 'menewaskan orang', 'mengancam nyawa', 'meninggal', 'meninggal dunia', 'orang mati', 'orang tewas', 'pemakaman', 'petugas penyelamat', 'telah meninggal', 'terbunuh', 'tewas', 'tewaskan', 'tim penyelamat', 'wanita meninggal', 'autopsi', 'belasungkawa', 'bencana', 'bencana besar', 'bunuh orang', 'darurat bencana', 'dilaporkan tewas', 'dimakamkan', 'dipastikan tewas', 'ditemukan mati', 'ditemukan tewas', 'hilangnya nyawa', 'identitas korban', 'inalillahi', 'jasad korban', 'jasadnya', 'jenasah wanita', 'jenazah', 'jenazah pria', 'jenazah teridentifikasi', 'jasad', 'kehilangan hidupnya', 'kehilangan nyawa', 'kehilangan nyawanya', 'kematian', 'korban', 'korban jiwa', 'korban meninggal', 'korban tewas', 'mati', 'mayat', 'mayat korban', 'membunuh', 'membunuh istrinya', 'membunuh mereka', 'membunuh suaminya', 'menemui ajal', 'mengalami koma', 'menghembuskan nafas terakhir', 'menimbulkan korban', 'meninggal akibat sakit', 'menyebabkan kematian', 'meregang nyawa', 'meregggut nyawa', 'modar', 'nyawa hilang', 'nyawa melayang', 'penyebab kematian', 'tak bernyawa', 'tak sadarkan diri', 'terkapar', 'tidak bernyawa', 'tutup usia', 'wafat', 'kematian virus', 'kematian wabah', 'korban terinfeksi', 'virus menyerang', 'merenggut nyawa', 'pelayat', 'hilangkan nyawa', 'renggut nyawa', 'wabah', 'keadaan kritis', 'kehilangan darah', 'merenggut jiwa', 'telan nyawa', 'menelan nyawa', 'memakan nyawa', 'dinyatakan meninggal', 'nyawa tak tertolong', 'penyakit', 'sakit pernapasan', 'sesak', 'korona', 'corona', 'odp', 'pdp', 'virus', 'rumah sakit', 'Covid-19', 'virus korona', 'positif korona', 'COVID-19', 'terjangkit COVID-19', 'terinfeksi virus corona');
+	    /*END NO-ADS WORD LIST*/
         /* POPULATE META DATA KEYWORDS */
         var dfp_pageTitle = kly.article && kly.article.title.klyFiltering(' ');
         var dfp_titles = (typeof dfp_pageTitle !== 'undefined' && dfp_pageTitle.length > 0 ) ? dfp_pageTitle: [];
@@ -3342,6 +3340,10 @@ window.GAMLibrary = {};
                     var myParam = JSON.parse(urlParams.get('interval'));
                     headlineSticky(myParam);
                 }
+
+                if (dfp_slotAdUnitPath == GAMLibrary.dfpBottomFrame) {
+                    document.getElementById("dfp-bframe-cont-transparent") && document.getElementById("dfp-bframe-cont-transparent").setAttribute("style", "position: fixed; bottom: 0; min-height: 50px; background-color: #ECECEC70; width: 100%; text-align: center;display:block; z-index: 999999");
+                }
                 
                 /*check for topframe rendering process */
                 if (dfp_slotAdUnitPath == GAMLibrary.dfpTopframe) {
@@ -3380,17 +3382,17 @@ window.GAMLibrary = {};
      /*INITIATE ADS ON CONTINOUS PAGE */
      GAMLibrary.initiateSCReadPage();
 
-    /* Criteo Section BEGIN */
-    googletag.pubads().disableInitialLoad();
-    Criteo.events.push(function() {
-        Criteo.RequestBidsOnGoogleTagSlots(3467, function() {
-            Criteo.SetDFPKeyValueTargeting();
-            googletag.pubads().refresh();
-        }, 2000);
-    });
-    /* Criteo Section END */
+	/* Criteo Section BEGIN */
+	googletag.pubads().disableInitialLoad();
+	Criteo.events.push(function() {
+	    Criteo.RequestBidsOnGoogleTagSlots(3467, function() {
+	        Criteo.SetDFPKeyValueTargeting();
+	        googletag.pubads().refresh();
+	    }, 2000);
+	});
+	/* Criteo Section END */
 
-    /*  START TARGETING BLOCK   */
+	/*  START TARGETING BLOCK   */
         if (isMatcont) { googletag.pubads().setTargeting("isMatcont", ["1"]);}
         if(typeof Krux !== "undefined"){
             googletag.pubads().setTargeting('ksg', Krux.segments);
@@ -3415,7 +3417,7 @@ window.GAMLibrary = {};
 
   });
 
-        googletag.cmd.push(function() {
+		googletag.cmd.push(function() {
         googletag.display('div-gpt-ad-merdeka-topfrm-oop');
         });
         googletag.cmd.push(function() {
@@ -3424,12 +3426,12 @@ window.GAMLibrary = {};
         googletag.cmd.push(function() {
         googletag.display('div-gpt-ad-merdeka-sc');
         });
-        googletag.cmd.push(function() {
-        googletag.display('dfp-recommend-1');
-        });
-        googletag.cmd.push(function() {
-        googletag.display('dfp-recommend-2');
-        });
+	    googletag.cmd.push(function() {
+	    googletag.display('dfp-recommend-1');
+	    });
+	    googletag.cmd.push(function() {
+	    googletag.display('dfp-recommend-2');
+	    });
         if (isReadPage) {
         googletag.cmd.push(function() {
             googletag.display('div-gpt-ad-merdeka-insertion-oop');
@@ -3439,56 +3441,56 @@ window.GAMLibrary = {};
         });
         }
 
-        var gptMMerdekaStyle = document.createElement('style');
-        gptMMerdekaStyle.textContent = `
-        #div-gpt-ad-merdeka-dfp-exposer-slot1-oop iframe {
-            width: auto;
-        }
+	    var gptMMerdekaStyle = document.createElement('style');
+	    gptMMerdekaStyle.textContent = `
+	    #div-gpt-ad-merdeka-dfp-exposer-slot1-oop iframe {
+	        width: auto;
+	    }
 
-        .div-gpt-ad-merdeka-sc-continous {
-            width: 300px;
-            margin: 0 auto !important;
-            padding-bottom: 50px;
-        }
+	    .div-gpt-ad-merdeka-sc-continous {
+	        width: 300px;
+	        margin: 0 auto !important;
+	        padding-bottom: 50px;
+	    }
 
-        .div-gpt-ad-merdeka-sc-multiple-page {
-            width: 300px;
-            margin: auto;
-            padding-top: 30px;
-        }
+	    .div-gpt-ad-merdeka-sc-multiple-page {
+	        width: 300px;
+	        margin: auto;
+	        padding-top: 30px;
+	    }
 
-        [id^="div-gpt-ad-merdeka-sc-"] {
-            display: flex;
-        }
-        `;
-        document.body.appendChild(gptMMerdekaStyle);
+	    [id^="div-gpt-ad-merdeka-sc-"] {
+	        display: flex;
+	    }
+	    `;
+	    document.body.appendChild(gptMMerdekaStyle);
 
         /* ===== HEADLINESTICKY METHOD - DEFAULT 3s ===== */
     /*var headlineStickyInterval=3,headlineStickyStatus=!1;function headlineSticky(t){null!=t&&(headlineStickyInterval=t),console.log(headlineStickyInterval);var e=document.getElementById("div-gpt-ad-merdeka-hl"),n=document.createElement("div");n.setAttribute("id","div-gpt-ad-merdeka-hl-shadow"),e.parentElement.insertBefore(n,e),injectStickyStyleAndAnimation(),window.addEventListener("scroll",headlineStickyScrollEevent)}function headlineStickyScrollEevent(){var t=document.getElementById("div-gpt-ad-merdeka-hl"),e=document.getElementById("div-gpt-ad-merdeka-hl-shadow").getBoundingClientRect().top;document.querySelector(".layout__nav-content"),document.documentElement.scrollTop||document.body.scrollTop;headlineStickyStatus?e<=0||(window.removeEventListener("scroll",headlineStickyScrollEevent),removeStickyHeadline(t,!1)):e<=0&&(t.classList.add("hl-active-sticky"),t.style="",removeStickyHeadline(t,!0),headlineStickyStatus=!0)}function removeStickyHeadline(t,e){var n=setInterval(function(){headlineStickyInterval<=0?(t.classList.remove("hl-active-sticky"),t.classList.remove("hl-navbar-hanging"),t.style.margin="10px 0",clearInterval(n),window.removeEventListener("scroll",headlineStickyScrollEevent)):headlineStickyInterval--},1e3);e||(clearInterval(n),t.classList.remove("hl-active-sticky"),t.classList.remove("hl-navbar-hanging"),t.style.margin="10px 0")}function injectStickyStyleAndAnimation(){var t=document.createElement("style");t.textContent="\n\t\t.hl-active-sticky {\n\t\t\tposition: fixed;\n\t\t\ttop: -100%;\n\t\t\tz-index: 9999;\n\t\t\tleft: 50%;\n\t\t\ttransform: translateX(-50%);\n\t\t\tmargin: 0;\n\t\t\ttransition : margin-top .5s ease;\n\t\t\tanimation: hlSlideDown .5s forwards;\n\t\t}\n\n\t\t.hl-navbar-hanging{\n\t\t\tmargin-top : 50px !important;\n\t\t}\n\n\t\t@keyframes hlSlideDown{\n\t\t\t0%{top : -100px;}\n\t\t\t100%{top : 0px;}\n\t\t}\n\t\t",document.head.appendChild(t)}*/
-    var headlineStickyInterval=3,headlineStickyStatus=!1;function headlineSticky(a){null!=a&&(headlineStickyInterval=a),console.log(headlineStickyInterval);var b=document.getElementById("div-gpt-ad-merdeka-hl"),c=document.createElement("div");c.setAttribute("id","div-gpt-ad-merdeka-hl-shadow"),b.parentElement.insertBefore(c,b),injectStickyStyleAndAnimation(),window.addEventListener("scroll",headlineStickyScrollEevent)}function headlineStickyScrollEevent(){var a=document.getElementById("div-gpt-ad-merdeka-hl"),b=document.getElementById("div-gpt-ad-merdeka-hl-shadow"),c=b.getBoundingClientRect().top,d=document.querySelector(".layout__nav-content"),e=document.documentElement.scrollTop||document.body.scrollTop;headlineStickyStatus?0>=c||(window.removeEventListener("scroll",headlineStickyScrollEevent),removeStickyHeadline(a,!1)):0>=c&&(a.classList.add("hl-active-sticky"),a.style="",removeStickyHeadline(a,!0),headlineStickyStatus=!0)}function removeStickyHeadline(a,b){var c=setInterval(function(){0>=headlineStickyInterval?(a.classList.remove("hl-active-sticky"),a.classList.remove("hl-navbar-hanging"),a.style.margin="10px 0",a.style.width="320px",a.style.textAlign="center",clearInterval(c),window.removeEventListener("scroll",headlineStickyScrollEevent)):headlineStickyInterval--},1e3);b||(clearInterval(c),a.classList.remove("hl-active-sticky"),a.classList.remove("hl-navbar-hanging"),a.style.margin="10px 0",a.style.margin="10px 0",a.style.width="320px",a.style.textAlign="center")}function injectStickyStyleAndAnimation(){var a=document.createElement("style");a.textContent=`
-        .hl-active-sticky {
-            position: fixed;
-            top: -100%;
-            z-index: 9999;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
+	var headlineStickyInterval=3,headlineStickyStatus=!1;function headlineSticky(a){null!=a&&(headlineStickyInterval=a),console.log(headlineStickyInterval);var b=document.getElementById("div-gpt-ad-merdeka-hl"),c=document.createElement("div");c.setAttribute("id","div-gpt-ad-merdeka-hl-shadow"),b.parentElement.insertBefore(c,b),injectStickyStyleAndAnimation(),window.addEventListener("scroll",headlineStickyScrollEevent)}function headlineStickyScrollEevent(){var a=document.getElementById("div-gpt-ad-merdeka-hl"),b=document.getElementById("div-gpt-ad-merdeka-hl-shadow"),c=b.getBoundingClientRect().top,d=document.querySelector(".layout__nav-content"),e=document.documentElement.scrollTop||document.body.scrollTop;headlineStickyStatus?0>=c||(window.removeEventListener("scroll",headlineStickyScrollEevent),removeStickyHeadline(a,!1)):0>=c&&(a.classList.add("hl-active-sticky"),a.style="",removeStickyHeadline(a,!0),headlineStickyStatus=!0)}function removeStickyHeadline(a,b){var c=setInterval(function(){0>=headlineStickyInterval?(a.classList.remove("hl-active-sticky"),a.classList.remove("hl-navbar-hanging"),a.style.margin="10px 0",a.style.width="320px",a.style.textAlign="center",clearInterval(c),window.removeEventListener("scroll",headlineStickyScrollEevent)):headlineStickyInterval--},1e3);b||(clearInterval(c),a.classList.remove("hl-active-sticky"),a.classList.remove("hl-navbar-hanging"),a.style.margin="10px 0",a.style.margin="10px 0",a.style.width="320px",a.style.textAlign="center")}function injectStickyStyleAndAnimation(){var a=document.createElement("style");a.textContent=`
+		.hl-active-sticky {
+			position: fixed;
+			top: -100%;
+			z-index: 9999;
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 0;
             width:320px;
             text-align:center;
-            transition : margin-top .5s ease;
-            animation: hlSlideDown .5s forwards;
-        }
+			transition : margin-top .5s ease;
+			animation: hlSlideDown .5s forwards;
+		}
 
-        .hl-navbar-hanging{
-            margin-top : 50px !important;
-        }
+		.hl-navbar-hanging{
+			margin-top : 50px !important;
+		}
 
-        @keyframes hlSlideDown{
-            0%{top : -100px;}
-            100%{top : 0px;}
-        }
-        `,document.head.appendChild(a)}    
-    /* ===== HEADLINESTICKY METHOD ===== */
+		@keyframes hlSlideDown{
+			0%{top : -100px;}
+			100%{top : 0px;}
+		}
+		`,document.head.appendChild(a)}    
+	/* ===== HEADLINESTICKY METHOD ===== */
     </script>
 	<!--LOTAME PIXEL TAG-->
   <!--<script src="https://tags.crwdcntrl.net/c/7159/cc_af.js" async defer></script>-->
