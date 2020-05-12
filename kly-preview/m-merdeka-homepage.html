@@ -3147,6 +3147,7 @@ window.GAMLibrary = {};
                                                 var scrollNode = document.scrollingElement || document.documentElement;
                                                 var scrollTop = scrollNode.scrollTop;
                                                 if (scrollTop >= "200") {
+						    document.getElementById("dfp-bframe-cont-transparent") && document.getElementById("dfp-bframe-cont-transparent").setAttribute("style", "position: fixed; bottom: 0; min-height: 50px; background-color: #ECECEC70; width: 100%; text-align: center;display:block; z-index: 999999");
                                                     window.removeEventListener("scroll", this.scrollHandler);
                                                     googletag.display('div-gpt-ad-merdeka-bottomfrm');
                                                     googletag.pubads().refresh([this.timedBottomFrm]);
