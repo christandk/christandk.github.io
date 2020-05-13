@@ -410,7 +410,7 @@ window.kmklabs.related_system = 'tag';
 <!-- MOBILE FIMELA.COM CHANNEL -->
 <script type="text/javascript">
     var gpt_gam_site = window.location.hostname.toUpperCase(),
-    gpt_gam_ver = 'V.0.2a';
+    gpt_gam_ver = 'V.0.2bb';
     console.log('%c GPT '+gpt_gam_site+' '+gpt_gam_ver ,'color:#d3d3d3; font-size:25px; font-weight: bold; -webkit-text-stroke: 1px black;');
 </script>
 
@@ -560,10 +560,9 @@ window.kmklabs.related_system = 'tag';
                                                         var scrollNode = document.scrollingElement || document.documentElement;
                                                         var scrollTop = scrollNode.scrollTop;
                                                         if (scrollTop >= "200") {
-                                                            console.log('testing scroll',scrollTop,this.timedBottomFrm);
                                                             window.removeEventListener("scroll", this.scrollHandler);
                                                             
-                                                            googletag.display('div-gpt-ad-liputan6-bottomfrm');
+                                                            googletag.display('div-gpt-ad-fimela-bottomfrm');
                                                             googletag.pubads().refresh([this.timedBottomFrm]);
 
                                                             this.refreshSlot = this.timedBottomFrm;
@@ -575,60 +574,55 @@ window.kmklabs.related_system = 'tag';
                                 },
         infiniteSCArticle   :  function() {
                                         /**
-                                        * DEPENDEND CLASS, TAG AND ID
-                                        * Class : article-content-body__item--hidden
-                                        * Tag : -
-                                        * ID : gpt-ad-liputan6-sc-[n]
+                                        * Init SC & HL taken from Old GPT fimela
                                         **/
 
-                                        var parentElement = document.querySelector(".article-content-body"),
-                                            pagingElement = parentElement.querySelectorAll(".article-content-body__item");
+										window.addEventListener("load", function() {
+												create_element('div-gpt-ad-fimela-hl-2', 'hl-2');
+												create_element('div-gpt-ad-fimela-hl-3', 'hl-3');
+												create_element('div-gpt-ad-fimela-sc-2', 'sc-2');
+												create_element('div-gpt-ad-fimela-sc-3', 'sc-3');
+												var hl2 = document.getElementById("hl-2"),
+												hl3 = document.getElementById("hl-3"),
+												sc2 = document.getElementById("sc-2"),
+												sc3 = document.getElementById("sc-3");
 
-                                        pagingElement && pagingElement.forEach(function(element, index) {
-                                            element.setAttribute("paging-index", index + 1);
-                                        })
+												(hl2 !== null) ? hl2.classList.add("channel-ad_ad-tb") : '';
+												(hl3 !== null) ? hl3.classList.add("channel-ad_ad-tb") : '';
+												(sc2 !== null) ? sc2.classList.add("channel-ad_ad-mrb") : '';
+												(sc3 !== null) ? sc3.classList.add("channel-ad_ad-mrb") : '';
 
-                                        mo = new MutationObserver(function(mutations) {
 
-                                            mutations.forEach(function(el) {
-                                                var oldValue = el.oldValue,
-                                                    target = el.target,
-                                                    SC,
-                                                    pagingIndex;
+												/*observe any changes on class when load more triggered*/
+												var $div = document.getElementsByClassName("articles--page");
+												var observer = new MutationObserver(function(mutations) {
+													mutations.forEach(function(mutation) {
+														console.log("mutation", mutation);
+														if (mutation.attributeName === "class") {
+															/*get load more order number*/
+															var order = parseInt((mutation.target).getAttribute('data-index')) + 1;
+															console.log('div-gpt-ad-fimela-hl-' + order);
+															/*trigger new adrequest from these adunits*/
+															var m_fim_hl = googletag.defineSlot(headlineAdUnit, [
+																[320, 50],
+																[320, 100]
+															], 'div-gpt-ad-fimela-hl-' + order).addService(googletag.pubads());
+															googletag.display('div-gpt-ad-fimela-hl-' + order);
+															var m_fim_sc = googletag.defineSlot(showcaseAdUnit, [300, 250], 'div-gpt-ad-fimela-sc-' + order).addService(googletag.pubads());
+															googletag.display('div-gpt-ad-fimela-sc-' + order);
+															googletag.pubads().refresh([m_fim_hl, m_fim_sc]);
 
-                                                if (oldValue && oldValue.match(/article-content-body__item/ig)) {
-                                                    pagingIndex = target.getAttribute('paging-index');
-                                                    if (!(pagingIndex % 2)) {
-                                                        target.childNodes.forEach(function(child, index) {
-                                                            if (child.id && child.id.match(/gpt-ad-liputan6-sc/ig)) {
-                                                                if (document.getElementById(child.id) && !SC) {
-                                                                    
-                                                                    /* DEFINE AND FETCH SC */
-                                                                    if ( SC = googletag.defineSlot('/36504930/m.liputan6.com/dfp-sc', [300, 250], child.id) ) {
-                                                                        SC.addService(googletag.pubads()).setTargeting("pagetype", kmklabs.pageType).setTargeting("position", (pagingIndex/2));
-                                                                        googletag.display(child.id);
-                                                                        googletag.pubads().refresh([SC]);
-                                                                    }
-                                                                }
-                                                            }
-                                                        });
-
-                                                    }
-
-                                                }
-
-                                            });
-                                        });
-
-                                        parentElement && mo.observe(parentElement, {
-                                            childList: true,
-                                            attributes: true,
-                                            characterData: false,
-                                            subtree: true,
-                                            attributeOldValue: true,
-                                            characterDataOldValue: false,
-
-                                        });
+														}
+													});
+												});
+										    
+												observer.observe($div[1], {
+													attributes: true
+												});
+												observer.observe($div[2], {
+													attributes: true
+												});
+											});
                                 }
         
     }
@@ -717,6 +711,13 @@ window.kmklabs.related_system = 'tag';
             /*check delivering ads slot*/
             if (dfp_slotDelivered == 'block')
             {
+            	if (dfp_slotAdUnitPath == GAMLibrary.dfpBottomFrame) {
+					var hbf = document.getElementsByClassName("channel-ad_ad-hbf");
+					var footer = document.getElementById("footer");
+					(footer !== null) ? footer.classList.add("dfp-footer") : '';
+					(hbf.length > 0) ? hbf[0].classList.add("dfp-hbf") : '';
+				}
+
                 if (dfp_slotAdUnitPath == GAMLibrary.dfpHeadline) {
                     console.log('INIT STICKY HEADLINE ');
                     var urlParams = new URLSearchParams(window.location.search);
@@ -747,6 +748,22 @@ window.kmklabs.related_system = 'tag';
                     });
                 }
             }
+
+            scWidth = 0;
+			if (self.innerHeight) {
+				scWidth = self.innerWidth;
+			}
+			if (document.documentElement && document.documentElement.clientHeight) {
+				scWidth = document.documentElement.clientWidth;
+			}
+			if (document.body) {
+				scWidth = document.body.clientWidth;
+			}
+			if (((scWidth * 150) / 480) < 150) {
+				scWidth = (scWidth * 150) / 480
+			} else {
+				scWidth = 150
+			}
 
             if (dfp_slotElementId.match(/-oop/)) { 
                 if (document.getElementById(dfp_slotElementId) && document.getElementById(dfp_slotElementId).getElementsByTagName('iframe')[0] && (document.getElementById(dfp_slotElementId).getElementsByTagName('iframe')[0].getAttribute('height') == 1)) {
