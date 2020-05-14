@@ -576,6 +576,22 @@ window.kmklabs.related_system = 'tag';
                                         /**
                                         * Init SC & HL taken from Old GPT fimela
                                         **/
+                                        /*create ads div container on anchor div*/
+										function create_element(elID, elAnchor) {
+											var newDiv = document.createElement("div");
+											newDiv.id = elID;
+											(document.getElementById(elAnchor)) && (document.getElementById(elAnchor)).appendChild(newDiv);
+											return document.getElementById(elID);
+										}
+
+										/*Get element position offset*/
+										function getOffset(el) {
+											el = el.getBoundingClientRect();
+											return {
+												left: el.left + window.scrollX,
+												top: el.top + window.scrollY
+											}
+										}
 
 										window.addEventListener("load", function() {
 												create_element('div-gpt-ad-fimela-hl-2', 'hl-2');
