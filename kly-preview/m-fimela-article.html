@@ -409,7 +409,7 @@ window.kmklabs.related_system = 'tag';
 <!-- MOBILE FIMELA.COM ARTICLE -->
 <script type="text/javascript">
     var gpt_gam_site = window.location.hostname.toUpperCase(),
-    gpt_gam_ver = 'V.0.1';
+    gpt_gam_ver = 'V.0.1a';
     console.log('%c GPT '+gpt_gam_site+' '+gpt_gam_ver ,'color:#d3d3d3; font-size:25px; font-weight: bold; -webkit-text-stroke: 1px black;');
 </script>
 <!-- PUBMATIC HEADER BIDDING-->
@@ -574,65 +574,7 @@ window.kmklabs.related_system = 'tag';
                                                     };
                                     this.scrollHandler = this.scroll.bind(this);
                                     window.addEventListener("scroll", this.scrollHandler);
-                                },
-        infiniteSCArticle   :  function() {
-                                        /**
-                                        * DEPENDEND CLASS, TAG AND ID
-                                        * Class : article-content-body__item--hidden
-                                        * Tag : -
-                                        * ID : gpt-ad-liputan6-sc-[n]
-                                        **/
-
-                                        var parentElement = document.querySelector(".article-content-body"),
-                                            pagingElement = parentElement.querySelectorAll(".article-content-body__item");
-
-                                        pagingElement && pagingElement.forEach(function(element, index) {
-                                            element.setAttribute("paging-index", index + 1);
-                                        })
-
-                                        mo = new MutationObserver(function(mutations) {
-
-                                            mutations.forEach(function(el) {
-                                                var oldValue = el.oldValue,
-                                                    target = el.target,
-                                                    SC,
-                                                    pagingIndex;
-
-                                                if (oldValue && oldValue.match(/article-content-body__item/ig)) {
-                                                    pagingIndex = target.getAttribute('paging-index');
-                                                    if (!(pagingIndex % 2)) {
-                                                        target.childNodes.forEach(function(child, index) {
-                                                            if (child.id && child.id.match(/gpt-ad-liputan6-sc/ig)) {
-                                                                if (document.getElementById(child.id) && !SC) {
-                                                                    
-                                                                    /* DEFINE AND FETCH SC */
-                                                                    if ( SC = googletag.defineSlot('/36504930/m.liputan6.com/dfp-sc', [300, 250], child.id) ) {
-                                                                        SC.addService(googletag.pubads()).setTargeting("pagetype", kmklabs.pageType).setTargeting("position", (pagingIndex/2));
-                                                                        googletag.display(child.id);
-                                                                        googletag.pubads().refresh([SC]);
-                                                                    }
-                                                                }
-                                                            }
-                                                        });
-
-                                                    }
-
-                                                }
-
-                                            });
-                                        });
-
-                                        parentElement && mo.observe(parentElement, {
-                                            childList: true,
-                                            attributes: true,
-                                            characterData: false,
-                                            subtree: true,
-                                            attributeOldValue: true,
-                                            characterDataOldValue: false,
-
-                                        });
                                 }
-        
     }
 
     /* DMP CATEGORY LIST */
@@ -843,7 +785,7 @@ window.kmklabs.related_system = 'tag';
   googletag.cmd.push(function() {
       googletag.display('div-gpt-ad-dfp-overlay-oop');
   });
-  
+
    /* ============ HEADLINE STICKY - DEFAULT 3s ============ */
      var headlineStickyInterval=5,headlineStickyStatus=!1;function headlineSticky(a){null!=a&&(headlineStickyInterval=a),console.log(headlineStickyInterval);var b=document.getElementById("div-gpt-ad-fimela-hl-1"),c=document.createElement("div");c.setAttribute("id","div-gpt-ad-fimela-hl-1-shadow"),b.parentElement.insertBefore(c,b),injectStickyStyleAndAnimation(),window.addEventListener("scroll",headlineStickyScrollEevent)}function headlineStickyScrollEevent(){var a=document.getElementById("div-gpt-ad-fimela-hl-1"),b=document.getElementById("div-gpt-ad-fimela-hl-1-shadow"),c=b.getBoundingClientRect().top,d=document.querySelector(".layout__nav-content"),e=document.documentElement.scrollTop||document.body.scrollTop;headlineStickyStatus?0>=c||(window.removeEventListener("scroll",headlineStickyScrollEevent),removeStickyHeadline(a,!1)):0>=c&&(a.classList.add("hl-active-sticky"),a.style="",removeStickyHeadline(a,!0),headlineStickyStatus=!0)}function removeStickyHeadline(a,b){var c=setInterval(function(){0>=headlineStickyInterval?(a.classList.remove("hl-active-sticky"),a.classList.remove("hl-navbar-hanging"),a.style.margin="10px 0",clearInterval(c),window.removeEventListener("scroll",headlineStickyScrollEevent)):headlineStickyInterval--},1e3);b||(clearInterval(c),a.classList.remove("hl-active-sticky"),a.classList.remove("hl-navbar-hanging"),a.style.margin="10px 0")}function injectStickyStyleAndAnimation(){var a=document.createElement("style");a.textContent=`
     .hl-active-sticky {
