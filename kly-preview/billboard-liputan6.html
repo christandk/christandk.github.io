@@ -3112,7 +3112,6 @@ if(liputan6.final) { liputan6.final(); }
         window.GAMLibrary = {};
         window.GAMLibrary = {
             dfpBillboard        :   '/36504930/www.liputan6.com/dfp-billboard',
-            gamImmersive        :   '/36504930/www.liputan6.com/dfp-immersive',
             userAgent           :   navigator.userAgent.toLowerCase(),
             GAMisTablet         :   /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(this.userAgent),
             documentMeta        :   function (metaName) {
@@ -3216,7 +3215,7 @@ window.createCDPTracker = function(cat, macro) {
         
           
             /* DEFINE IMMERSIVE TAG - DO NOT CHANGE THE SLOT ORDER, IMMERSIVE ALWAYS ON THE 1st POSITION - */
-            var gam_immersive = googletag.defineOutOfPageSlot(GAMLibrary.gamImmersive, 'div-gpt-ad-liputan6-immersive-oop').addService(googletag.pubads());
+            // var gam_immersive = googletag.defineOutOfPageSlot(GAMLibrary.gamImmersive, 'div-gpt-ad-liputan6-immersive-oop').addService(googletag.pubads());
         
             googletag.defineSlot('/36504930/www.liputan6.com/dfp-sc', [[300, 250],[250, 250]], 'div-gpt-ad-liputan6-sc').addService(googletag.pubads());
             googletag.defineSlot('/36504930/www.liputan6.com/dfp-halfpage1', [[300, 250],[300, 600],[160, 600]], 'div-gpt-ad-liputan6-halfpage1').addService(googletag.pubads());
@@ -3241,8 +3240,6 @@ window.createCDPTracker = function(cat, macro) {
             googletag.pubads().addEventListener('slotRenderEnded', function(event) {
                 var dfp_slotElementId = event.slot.getSlotId().getDomId();
         
-                if (event.slot == gam_immersive) {
-                        if (event.isEmpty) {
                             gam_billboard = googletag.defineOutOfPageSlot(GAMLibrary.dfpBillboard, 'div-gpt-ad-liputan6-billboard-oop').addService(googletag.pubads());
                             gam_topfrm = googletag.defineOutOfPageSlot('/36504930/www.liputan6.com/dfp-topfrm', 'div-gpt-ad-liputan6-topfrm-oop').addService(googletag.pubads());
                             gam_bottomfrm = googletag.defineSlot('/36504930/www.liputan6.com/dfp-bottomfrm', [468, 60], 'div-gpt-ad-liputan6-bottomfrm-oop').addService(googletag.pubads());
@@ -3259,9 +3256,6 @@ window.createCDPTracker = function(cat, macro) {
                             }else{
                                 googletag.pubads().refresh([gam_billboard, gam_topfrm, gam_bottomfrm]);
                             }
-                            
-                        }
-                }
                           
             });
     
