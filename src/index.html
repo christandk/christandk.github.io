@@ -1,0 +1,63 @@
+<html>
+  <body ng-app>
+    <br>
+    <br>
+      <div ng-controller="Controller">
+    <h3 class="text-center">UTM Tracking</h3>
+      <form id="trackingForm" data-abide="ajax">
+    <div class="row collapse">
+      <div class="small-3 medium-offset-2 medium-2 columns">
+        <span class="prefix radius">URL</span>
+      </div>
+      <div class="small-9 medium-6 end columns">
+        <input type="url" class="radius" name="url" ng-model="link.url" placeholder="Enter campaign URL" required>
+          <small class="error">Valid URL required, must include http://</small>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-3 medium-offset-2 medium-2 columns">
+        <span class="prefix radius">UTM Campaign</span>
+      </div>
+      <div class="small-9 medium-6 end columns">
+        <input type="text" class="radius" name="campaign" ng-model="link.utmCampaign" placeholder="Enter campaign name" required>
+          <small class="error">Valid UTM campaign required</small>
+      </div>
+    </div>      
+    <div class="row collapse">
+      <div class="small-3 medium-offset-2 medium-2 columns">
+        <span class="prefix radius">UTM Source</span>
+      </div>
+      <div class="small-9 medium-6 end columns">
+        <input type="text" class="radius" ng-model="link.utmSource" placeholder="Enter source" required>
+          <small class="error">Valid UTM source required</small>
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-3 medium-offset-2 medium-2 columns">
+        <span class="prefix radius">UTM Term</span>
+      </div>
+      <div class="small-9 medium-6 end columns">
+        <input class="radius" type="text" ng-model="link.utmContent" placeholder="Enter term (optional)">
+          <small class="error">Valid UTM content required</small>
+      </div>
+    </div>
+      
+      <div class="row">
+        <div class="small-12 text-center columns">
+        <button id="generate" href="#" type="submit" class="button medium radius">Generate link</button>
+          
+        </div>
+      </div>
+      </form>
+      <hr>
+    <div id="result" class="row">
+      <div class="small-12 text-center columns">
+        <p>Here's your link with tracking! Edit the fields to see change in real-time!</p>
+        <p>
+          <a ng-href="{{ finalLink() }}">{{ finalLink() }}</a>
+        </p>
+      </div>
+    </div>
+        </div>
+  </body>
+</html>
